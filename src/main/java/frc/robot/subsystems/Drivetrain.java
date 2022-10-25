@@ -3,7 +3,9 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
-
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -29,10 +31,10 @@ public class Drivetrain extends SubsystemBase {
   public void setPower(double leftPower, double rightPower) {
     // sets the speed for the left and right motors
     leftMotor1.set(leftPower);
-    // leftMotor2.set(leftPower);
+    leftMotor2.set(leftPower);
     
-    // rightMotor1.set(rightPower);
-    // rightMotor2.set(rightPower);
+    rightMotor1.set(rightPower);
+    rightMotor2.set(rightPower);
   }
 
   @Override

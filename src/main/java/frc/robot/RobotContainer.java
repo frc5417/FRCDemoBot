@@ -23,9 +23,15 @@ public class RobotContainer {
 
   // The robot's subsystems and commands are defined here...
   private final static Drivetrain m_drivetrainSubsystem = new Drivetrain(joystick);
+  private final static Launcher m_launcherSubsystem = new Launcher();
+
+  private final static Launch m_launchCommand = new Launch(m_launcherSubsystem);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
-  public RobotContainer() {}
+  public RobotContainer() {
+    JoystickButton yButton = new JoystickButton(joystick, 4);
+    yButton.whileActiveOnce(m_launchCommand);
+  }
   
   public Drivetrain getDrivetrain() {
     return m_drivetrainSubsystem;

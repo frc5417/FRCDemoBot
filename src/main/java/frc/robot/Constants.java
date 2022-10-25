@@ -17,6 +17,9 @@ public final class Constants {
     public static final int leftMotor2Port = 6;
     public static final int rightMotor1Port = 5;
     public static final int rightMotor2Port = 4;
+    public final static int solenoid = 75; 
 
+    public final static int LaunchBot = 0;
+    public final static int LaunchTop = 2;
     public static final double speedMultiplier = 0.1;
 }
