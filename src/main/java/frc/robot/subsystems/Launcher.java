@@ -6,10 +6,8 @@ package frc.robot.subsystems;
 import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import frc.robot.RobotContainer;
 
 public class Launcher extends SubsystemBase {
   private DoubleSolenoid Launch1;
@@ -20,7 +18,7 @@ public class Launcher extends SubsystemBase {
   /** Creates a new Laucher */
   public Launcher() { 
     Launch1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.LaunchBot, Constants.LaunchTop);
-    Launch2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 6, 7);
+    Launch2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 2, 7);
   }
 
   public void toggleSolenoids() {
