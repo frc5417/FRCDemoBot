@@ -19,16 +19,21 @@ public class Drivetrain extends SubsystemBase {
   private final static Spark leftMotor2 = new Spark(Constants.leftMotor2Port);
   private final static Spark rightMotor1 = new Spark(Constants.rightMotor1Port);
   private final static Spark rightMotor2 = new Spark(Constants.rightMotor2Port);
-
+  
   /** Creates a new Drivetrain. */
   public Drivetrain(Joystick stick) {
-    leftMotor1.setInverted(true);
-    leftMotor2.setInverted(true);
+    rightMotor1.setInverted(true);
+    rightMotor2.setInverted(true);
 
     joystick = stick;
   }
 
   public void setPower(double leftPower, double rightPower) {
+    if(leftPower > 0.3){
+      System.out.println(leftPower);
+      System.out.println(rightPower);
+    }
+
     // sets the speed for the left and right motors
     leftMotor1.set(leftPower);
     leftMotor2.set(leftPower);
@@ -40,7 +45,7 @@ public class Drivetrain extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    setPower(joystick.getRawAxis(1) * Constants.speedMultiplier, joystick.getRawAxis(5) * Constants.speedMultiplier);
+    setPower(joystick.getRawAxis(5) * Constants.speedMultiplier, joystick.getRawAxis(1) * Constants.speedMultiplier);
   }
 
   @Override
